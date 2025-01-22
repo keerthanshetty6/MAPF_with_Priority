@@ -45,7 +45,7 @@ at(A, U, t) :- at(A, U, t-1), not move(A, U, _, t).
 % Constraints
 :- move(A, U, _, t), not at(A, U, t-1).       % Agent must only move from its current position
 :- { at(_, U, t) } > 1, vertex(U).            % Only one agent can occupy a vertex
-%:- move(_, U, V, t), move(_, V, U, t).        % No back-and-forth moves
+:- move(_, U, V, t), move(_, V, U, t).        % No swapping
 :- at(A, U, t), at(B, U, t), A != B , m=fc.          % Agents cannot share the same vertex
                     
 #program check(t).
@@ -56,3 +56,5 @@ at(A, U, t) :- at(A, U, t-1), not move(A, U, _, t).
 #show at/3.
 
 %reach fact
+
+#heuristic move( A,U,V,T) : agent(A), edge( U,V) ,V != V ’.

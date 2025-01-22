@@ -10,7 +10,7 @@ holds(F,0) :- init(F).
 % Generate
 { move(X,Y,t) : block(X), location(Y), X != Y } = 1.
 % Test
-:- move(X,Y,t), holds(on(A,X),t0).
+:- move(X,Y,t), holds(on(A,X),t-1).
 :- move(X,Y,t), holds(on(B,Y),t-1), B != X, Y != table.
 % Define
 moved(X,t) :- move(X,Y,t).

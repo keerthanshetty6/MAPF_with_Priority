@@ -2,6 +2,10 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import re
 
+def read_from_file(file_path):
+    with open(file_path, 'r') as file:
+        return file.read()
+
 def parse_input(input_data):
     """
     Parse the input file generated to extract vertices, edges, and agent info.
@@ -101,28 +105,7 @@ def centrality(agent):
         pass
     return start_centrality_bw,goal_centrality_bw,start_centrality_cl,goal_centrality_cl
 
-input_data = """
-vertex((3,1)).
-vertex((2,2)).
-vertex((3,2)).
-vertex((4,2)).
-vertex((5,2)).
-vertex((1,3)).
-vertex((2,3)).
-vertex((4,3)).
-vertex((5,3)).
-vertex((2,4)).
-vertex((3,4)).
-vertex((4,4)).
-vertex((2,5)).
-vertex((3,5)).
-agent(1).
-start(1,(3,1)).
-goal(1,(3,5)).
-agent(2).
-start(2,(1,3)).
-goal(2,(5,3)).
-"""
+input_data = read_from_file("test-instance.lp")
 
 
 # Automate the process
