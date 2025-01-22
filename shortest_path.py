@@ -179,3 +179,5 @@ for _,data in agents.items():
 pos = {node: node for node in G.nodes()}  # Use node coordinates as positions
 nx.draw_networkx(G, pos, with_labels=True, node_color=node_colors, font_weight='bold')
 plt.show()
+
+#PS C:\Users\Keerthan Shetty\OneDrive - KNIME AG\Desktop\Python\ASP\MAPF_with_Priority> py shortest_path.py
